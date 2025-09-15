@@ -1,29 +1,17 @@
-/* App.css */
-.navbar {
-  background-color: #2563eb;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+:root{
+  --bg:#f0f2f5;
+  --card:#fff;
+  --text:#111;
 }
-
-.nav-link {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
-  font-weight: bold;
+[data-theme="dark"]{
+  --bg:#071022; --card:#0e1722; --text:#e6eef8;
 }
-
-.logout-btn {
-  background: #ef4444;
-  border: none;
-  padding: 5px 10px;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.logo {
-  font-weight: bold;
+*{box-sizing:border-box}
+body{ margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:var(--bg); color:var(--text); }
+a{ color:inherit; text-decoration:none; }
+.card{ background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(4,12,32,0.04); padding:12px; border:1px solid rgba(0,0,0,0.03); }
+.btn{ background:#1877f2; color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.muted{ color:#666; }
+@media(max-width:700px){
+  .chat-wrap{flex-direction:column}
 }

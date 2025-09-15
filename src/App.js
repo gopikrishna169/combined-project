@@ -1,44 +1,33 @@
-// App.js
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Header from "./components/Header";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
-import "./App.css";   // 👈 import
+import Friends from "./pages/Friends";
+import Chat from "./pages/Chat";
+import Notifications from "./pages/Notifications";
+import Feed from "./components/Feed";
+import { useApp } from "./context/AppProvider";
 
-function App() {
-  const [user, setUser] = useState(localStorage.getItem("user") || "");
-
-  const handleLogin = (username) => {
-    setUser(username);
-    localStorage.setItem("user", username);
-  };
-
-  const handleLogout = () => {
-    setUser("");
-    localStorage.removeItem("user");
-  };
+export default function App() {
+  const { currentUser } = useApp();
 
   return (
     <Router>
-      <nav className="navbar">
-        <h1 className="logo">MEER APP</h1>
-        {user && (
-          <div>
-            <Link to="/home" className="nav-link">Home</Link>
-            <Link to="/profile" className="nav-link">Profile</Link>
-            <button onClick={handleLogout} className="logout-btn">Logout</button>
-          </div>
-        )}
-      </nav>
-      <Routes>
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/home" element={user ? <Home user={user} /> : <Navigate to="/login" />} />
-        <Route path="/profile" element={user ? <Profile user={user} /> : <Navigate to="/login" />} />
-        <Route path="*" element={<Navigate to={user ? "/home" : "/login"} />} />
-      </Routes>
+      <Header />
+      <div style={{ maxWidth: 1000, margin: "18px auto", padding: "0 14px" }}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={currentUser ? <Feed /> : <Navigate to="/login" />} />
+          <Route path="/profile" element={currentUser ? <Profile /> : <Navigate to="/login" />} />
+          <Route path="/friends" element={currentUser ? <Friends /> : <Navigate to="/login" />} />
+          <Route path="/chat" element={currentUser ? <Chat /> : <Navigate to="/login" />} />
+          <Route path="/notifications" element={currentUser ? <Notifications /> : <Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to={currentUser ? "/home" : "/login"} />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
-
-export default App;

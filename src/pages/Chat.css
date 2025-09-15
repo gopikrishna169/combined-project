@@ -1,0 +1,57 @@
+.chat-page {
+  display: flex;
+  height: calc(100vh - 60px); /* adjust for navbar */
+}
+
+.friends-list {
+  width: 250px;
+  background: #f3f4f6;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.friend-item {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.friend-item:hover {
+  background: #e5e7eb;
+}
+
+.friend-item.active {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-dot.online {
+  background: #22c55e;
+}
+
+.status-dot.offline {
+  background: #9ca3af;
+}
+
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.no-chat {
+  margin: auto;
+  font-size: 18px;
+  color: #6b7280;
+}

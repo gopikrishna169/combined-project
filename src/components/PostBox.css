@@ -1,0 +1,8 @@
+.card { background:white; padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
+.postbox { display:flex; gap:12px; align-items:flex-start; }
+.postbox-avatar { width:48px; height:48px; border-radius:50%; }
+.postbox-text { width:100%; min-height:72px; border-radius:8px; padding:10px; border:1px solid #e8e8e8; resize:none; }
+.postbox-controls { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+.postbox-controls input { font-size:14px; }
+.btn { background:#1877f2; color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.postbox-preview img { max-width:220px; margin-top:8px; border-radius:8px; }

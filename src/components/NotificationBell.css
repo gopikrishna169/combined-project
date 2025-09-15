@@ -1,0 +1,7 @@
+.notif-bell { position:relative; }
+.nbadge { background:#ff3b30; color:white; padding:2px 6px; border-radius:12px; margin-left:6px; font-size:12px; }
+.notif-dropdown { position:absolute; right:0; top:36px; width:300px; background:white; border-radius:8px; padding:8px; box-shadow:0 10px 30px rgba(0,0,0,0.12); z-index:50; }
+.notif-item { padding:8px; border-bottom:1px solid #f1f1f1; }
+.notif-empty { padding:8px; color:#666; }
+.notif-time { font-size:12px; color:#888; margin-top:4px; }
+.unread { background:#f7fbff; }

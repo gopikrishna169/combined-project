@@ -1,0 +1,14 @@
+.post-card { display:flex; flex-direction:column; gap:10px; }
+.post-header { display:flex; gap:10px; align-items:center; }
+.pc-avatar { width:48px; height:48px; border-radius:50%; }
+.pc-author { font-weight:700; }
+.pc-time { font-size:13px; color:#666; }
+.post-body { font-size:15px; line-height:1.5; }
+.post-media img { width:100%; border-radius:8px; max-height:420px; object-fit:cover; }
+.post-actions { display:flex; gap:8px; }
+.post-actions button { background:transparent; border:none; cursor:pointer; color:#333; }
+.post-comments { border-top:1px solid #f1f1f1; padding-top:8px; }
+.comment { padding:6px 0; font-size:14px; color:#333; }
+.comment-box { display:flex; gap:8px; margin-top:6px; }
+.comment-box input { flex:1; padding:8px; border-radius:8px; border:1px solid #e8e8e8; }
+.comment-box button { padding:8px 10px; border-radius:8px; background:#1877f2; color:white; border:none; }
